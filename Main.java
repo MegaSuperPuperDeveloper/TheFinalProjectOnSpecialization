@@ -16,10 +16,6 @@ public class Main {
         HashMap<String, Animal> animalStringHashMap = new HashMap<>();
         int answer1 = 0;
         int answer2 = 0;
-        Cat cat = new Cat("Кит");
-        cat.newCommand();
-        cat.doCommaand(cat);
-        cat.printCommands();
         String name = "has not";
         boolean turner = true;
         System.out.println("Внимание! У всех животных должны быть разные имена!");
