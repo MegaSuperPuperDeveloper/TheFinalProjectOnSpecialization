@@ -20,20 +20,31 @@ public class Animal {
         return name;
     }
 
-    public void printCommands() { // Вывести команды, которое выполняет животное
+
+    /**
+     * Функция выводит список команд, котрое выполняет выбранное животное
+     */
+    public void printCommands() {
         System.out.println("Список команд, которое выполняет животное: ");
         for (String action : this.commands.keySet()) {
             System.out.println(action + ", " + "животное " + this.commands.get(action));
         }
     }
 
-    public void doCommaand(Animal animal) { // Животное выполняет команду
+    /**
+     * Функция выполнения команд, которое должно выполнить животное
+     * @param animal животное которое выполняет команду
+     */
+    public void doCommand(Animal animal) {
         System.out.println("Введите название команды: ");
         command = scanner.nextLine();
         System.out.println(animal.getName() + " " + this.commands.get(command));
     }
 
-    public void newCommand() { // Добавление новой команды для животного
+    /**
+     * Функция добавления новой команды для животного
+     */
+    public void newCommand() {
         String action = "";
         try {
             System.out.println("Введите название команды: ");

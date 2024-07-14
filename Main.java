@@ -16,10 +16,6 @@ public class Main {
         HashMap<String, Animal> animalStringHashMap = new HashMap<>();
         int answer1 = 0;
         int answer2 = 0;
-        Cat cat = new Cat("Кит");
-        cat.newCommand();
-        cat.doCommaand(cat);
-        cat.printCommands();
         String name = "has not";
         boolean turner = true;
         System.out.println("Внимание! У всех животных должны быть разные имена!");
@@ -48,9 +44,10 @@ public class Main {
                 }
                 turner = true;
                 System.out.println();
-                if (answer1 == 5) {
-                    System.out.println("До новых встреч!");
-                    break;
+                switch (answer1) {
+                    case 1:
+                        System.out.println("До новых встреч!");
+                        break;
                 }
 
                 switch (answer1) {
@@ -126,7 +123,7 @@ public class Main {
                         animalStringHashMap.get(name).newCommand();
                         break;
                     case 4: // Сказать команду животному
-                        animalStringHashMap.get(name).doCommaand(animalStringHashMap.get(name));
+                        animalStringHashMap.get(name).doCommand(animalStringHashMap.get(name));
                         break;
                 }
                 System.out.println();

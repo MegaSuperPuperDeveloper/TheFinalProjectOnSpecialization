@@ -8,7 +8,7 @@ public class Counter implements AutoCloseable {
 
     }
 
-    public void add() throws Exception {
+     public void add() throws Exception {
         if (!inTryWithResorces) {
             throw new Exception("Объект должен находится внутри ресурса");
         }
