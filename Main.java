@@ -19,11 +19,10 @@ public class Main {
         String name = "has not";
         boolean turner = true;
         System.out.println("Внимание! У всех животных должны быть разные имена!");
+        Scanner scanner = new Scanner(System.in);
         try (Counter counter = new Counter()) {
             while(true) {
-                Scanner scanner = new Scanner(System.in);
                 System.out.println();
-
                 System.out.println("Меню:");
                 System.out.println("1. Завести новое животное");
                 System.out.println("2. Увидеть список команд, которое выполняет животное");
@@ -31,24 +30,19 @@ public class Main {
                 System.out.println("4. Сказать команду животному");
                 System.out.println("5. Выход");
                 System.out.println();
-                System.out.println("Введите номер действия: ");
+                System.out.print("Введите номер действия: ");
                 while(turner) {
                     turner = false;
                     try {
+                        scanner = new Scanner(System.in);
                         answer1 = scanner.nextInt();
                     } catch (InputMismatchException e) {
                         System.out.println("Ошибка! Введите действие от 1 до 5!");
-                        scanner = new Scanner(System.in);
                         turner = true;
                     }
                 }
                 turner = true;
                 System.out.println();
-                switch (answer1) {
-                    case 1:
-                        System.out.println("До новых встреч!");
-                        break;
-                }
 
                 switch (answer1) {
                     case 1:
@@ -59,14 +53,14 @@ public class Main {
                         System.out.println("4. Лошадь");
                         System.out.println("5. Осел");
                         System.out.println("6. Верблюд");
-                        System.out.println("Выберите действие:");
+                        System.out.print("Выберите номер животного: ");
                         while(turner) {
                             turner = false;
                             try {
+                                scanner = new Scanner(System.in);
                                 answer2 = scanner.nextInt();
                             } catch (InputMismatchException e) {
                                 System.out.println("Ошибка! Введите номер животного от 1 до 6!");
-                                scanner = new Scanner(System.in);
                                 turner = true;
                             }
                         }
@@ -75,18 +69,11 @@ public class Main {
                         break;
                 }
 
-                System.out.println("Введите имя: ");
-                while(turner) {
-                    turner = false;
-                    try {
-                        name = scanner.nextLine();
-                    } catch (InputMismatchException e) {
-                        System.out.println("Ошибка! Введите имя!");
-                        scanner = new Scanner(System.in);
-                        turner = true;
-                    }
+                if (answer1 >= 1 && answer1 <= 5) {
+                    System.out.print("Введите имя: ");
+                    scanner = new Scanner(System.in);
+                    name = scanner.nextLine();
                 }
-                turner = true;
                 System.out.println();
 
                 switch (answer1) { // Заводим новое животное и задаем ему имя.
